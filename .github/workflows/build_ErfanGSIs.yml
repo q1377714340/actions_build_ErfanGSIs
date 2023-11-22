@@ -13,7 +13,7 @@ on:
   watch:
     types: [started]
     
-env:e
+env:
   ROM_URL: https://firmware.meizu.com/Firmware/Flyme/meizu18X/10.2.0.0/cn/20230926170717/b48753d2/update.zip
   ROM_NAME: Flyme
   BUILD_TYPE: ab
@@ -49,7 +49,7 @@ jobs:
        - name: Download Stock Rom & Generate GSI
          run: |
               cd  $GITHUB_WORKSPACE/ErfanGSIs
-              sudo bash ErfanGSIs/url2GSI.sh -c --$BUILD_TYPE $ROM_URL $ROM_NAME
+              sudo bash ./url2GSI.sh -c --$BUILD_TYPE $ROM_URL $ROM_NAME
        
        - name: Zip GSI  
          run: |
